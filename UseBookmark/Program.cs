@@ -24,7 +24,7 @@ namespace UseBookmark
                 });
             /*
              * To clean up the persistence database to have a fresh database, run the scripts in:
-             * %WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN in the following order.
+               %WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN in the following order.
                     SqlWorkflowInstanceStoreSchema.sql
                     SqlWorkflowInstanceStoreLogic.sql
              * */
