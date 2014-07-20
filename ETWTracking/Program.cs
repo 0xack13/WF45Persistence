@@ -7,13 +7,19 @@ using System.Threading;
 
 namespace ETWTracking
 {
-
     class Program
     {
+
+        /*
+         * Enable Analytic and Debug Logs:
+         * Event Viewer -> Applications and Services Logs -> 
+         * Microsoft -> Windows -> Application Server-Applications
+         * Right-click "Application Server-Applications" -> select View ->
+         * Show Analytic and Debug Logs -> Refresh 
+         * */
         static void Main(string[] args)
         {
-            
-            #region ETW tracking setup
+            //Tracking Configuration
             TrackingProfile trackingProfile = new TrackingProfile();
             trackingProfile.Queries.Add(new WorkflowInstanceQuery
             {
@@ -31,9 +37,8 @@ namespace ETWTracking
             EtwTrackingParticipant etwTrackingParticipant =
                 new EtwTrackingParticipant();
             etwTrackingParticipant.TrackingProfile = trackingProfile;
-            #endregion
-
-            #region Workflow Application
+ 
+            // Run workflow app "Workflow1.xaml"
             AutoResetEvent waitHandler = new AutoResetEvent(false);
             WorkflowApplication wfApp =
                 new WorkflowApplication(new Workflow1());
@@ -41,7 +46,6 @@ namespace ETWTracking
             wfApp.Extensions.Add(etwTrackingParticipant);
             wfApp.Run();
             waitHandler.WaitOne();
-            #endregion
         }
     }
 }
