@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseBookmark", "UseBookmark\UseBookmark.csproj", "{28EE2B5B-6010-4ABC-B71E-65C6316BC93A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETWTracking", "ETWTracking\ETWTracking.csproj", "{E509D84D-32A1-4CC6-A70A-C303BBC1C315}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,6 +17,10 @@ Global
 		{28EE2B5B-6010-4ABC-B71E-65C6316BC93A}.Debug|x86.Build.0 = Debug|x86
 		{28EE2B5B-6010-4ABC-B71E-65C6316BC93A}.Release|x86.ActiveCfg = Release|x86
 		{28EE2B5B-6010-4ABC-B71E-65C6316BC93A}.Release|x86.Build.0 = Release|x86
+		{E509D84D-32A1-4CC6-A70A-C303BBC1C315}.Debug|x86.ActiveCfg = Debug|x86
+		{E509D84D-32A1-4CC6-A70A-C303BBC1C315}.Debug|x86.Build.0 = Debug|x86
+		{E509D84D-32A1-4CC6-A70A-C303BBC1C315}.Release|x86.ActiveCfg = Release|x86
+		{E509D84D-32A1-4CC6-A70A-C303BBC1C315}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
