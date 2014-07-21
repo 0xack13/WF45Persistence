@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Activities;
+using System.Diagnostics;
 
 namespace Extensions
 {
@@ -17,9 +18,10 @@ namespace Extensions
             ExecutionCountExtension ext = context.GetExtension<ExecutionCountExtension>();
             if (ext != null)
             {
+                Debug.WriteLine(context.ActivityInstanceId + ": Activity Executed!");
                 ext.Register(context.WorkflowInstanceId);
             }
-
         }
+
     }
 }
