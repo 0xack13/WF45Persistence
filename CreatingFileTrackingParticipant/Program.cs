@@ -12,11 +12,13 @@ namespace FileTrackingParticipant
     {
         static void Main(string[] args)
         {
+            
             TrackingProfile fileTrackingProfile = new TrackingProfile();
             fileTrackingProfile.Queries.Add(new WorkflowInstanceQuery
             {
                 States = { "*" }
             });
+            
             fileTrackingProfile.Queries.Add(new ActivityStateQuery()
             {
                 States = { 
@@ -24,13 +26,16 @@ namespace FileTrackingParticipant
                     ActivityStates.Closed
                 }
             });
+            
             FileTrackingParticipant fileTrackingParticipant = new FileTrackingParticipant();
             fileTrackingParticipant.TrackingProfile = fileTrackingProfile;
+            
             AutoResetEvent waitHandler = new AutoResetEvent(false);
             WorkflowApplication wfapp = new WorkflowApplication(new Workflow1());
             wfapp.Unloaded = (wfAppEventArg) => { waitHandler.Set(); };
             wfapp.Extensions.Add(fileTrackingParticipant);
             wfapp.Run();
+            
             waitHandler.WaitOne();
         }
     }
